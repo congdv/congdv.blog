@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-post-js","path":"/second-post","result":{"data":{"markdownRemark":{"html":"<h1>Hello! This is first blog</h1>\n<p>This is my website that built with gatsby</p>\n<pre><code>This is my code\n</code></pre>","frontmatter":{"path":"/second-post","title":"Second Blog Post"}}},"pageContext":{}}}
