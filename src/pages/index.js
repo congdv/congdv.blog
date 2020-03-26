@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Intro from "../components/Intro"
-
+import { fadeIn } from 'react-animations'
 
 const IndexPage = ({data}) => (
   <Layout>
