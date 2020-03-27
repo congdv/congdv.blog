@@ -1,4 +1,10 @@
 /* Fonts */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif');
 $font-family: 'IBM Plex Serif', serif;
 
@@ -18,27 +24,63 @@ $h3: 1.85rem;
 $h4: 1.7rem;
 $h5: 1.4rem;
 
+
 body {
   background: $background-color;
   color: $primary-color;
   font-family: $font-family;
 }
+.card, .card-2 {
+  position: absolute;
+  top:50%;
+  left: 50%;
+}
+.card{
+  z-index: 999;
+}
+.card-2 {
+  z-index: 1;
+  .description {
+    .title {
+      font-size: $h5;
+    }
+    p {
+      margin-top: 15px;
+    }
+    
+  }
+  .social-links {
+    margin-top: 20px;
+    flex-direction: column;
+    li {
+      list-style: none;
+      margin-top: 5px;
+      a {
+        color: $primary-color;
+        font-size: 1.1rem;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
 .wrap {
+  position: relative;
   margin: 0 auto;
-  max-width: 1200px;
-  .profile-card {
+  width: 100vh;
+  height: 100vh;
+  .profile-card{
     text-align: center;
     border-radius: 4px;
     flex-direction: column;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
     width: 340px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%,-50%);
     z-index: 2;
     overflow: hidden;
     padding: 10px;
+    background-color: #F9FAFB;
     .avatar {
       margin-top: 20px;
       img {
@@ -55,6 +97,7 @@ body {
       }
     }
     
+    
 
     .name {
       margin-top: 10px;
@@ -64,6 +107,10 @@ body {
     .description {
       margin-top: 20px;
       font-size: $h5;
+
+      p {
+        margin-top: 15px;
+      }
     }
 
     .menu-container {
@@ -80,6 +127,17 @@ body {
           color: $primary-color;
           &:hover {
             color: $hover-color;
+            text-transform: uppercase;
+            cursor: pointer;
+          }
+        }
+      }
+      .not-implemented {
+        a {
+          &:hover {
+            cursor: not-allowed;
+            
+            user-select: none;
           }
         }
       }
@@ -93,3 +151,47 @@ body {
   }
   
 }
+
+.about-me-card {
+  border-radius: 4px;
+  overflow: hidden;
+  transform: translateY(-50%);
+  padding: 10px 10px;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+}
+.project-card {
+  overflow: hidden;
+  transform: translateY(-50%);
+  padding: 10px 10px;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+  .project-list {
+    margin-left: 20px;
+      li {
+        list-style: none;
+        margin-top: 15px;
+        a {
+          color: #121315;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1rem;
+          font-style: bold;
+          &:hover{
+            color: $light-primary-color;
+          }
+        }
+        &::before {
+          content: "\2022 ";
+          position: absolute;
+          left: 10px;
+          color: #929292;
+          font-size: 22px;
+          line-height: 1.1;
+        }
+    }
+  }
+  
+  
+}
+
